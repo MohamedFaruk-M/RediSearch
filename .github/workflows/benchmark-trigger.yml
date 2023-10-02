@@ -1,4 +1,4 @@
-name: Check if needs trigger CircleCI benchmark
+name: Benchmark
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ jobs:
           contains: 'run-benchmark'
 
   perf-ci:
-    name: Trigger CI benchmarks
+    name: Trigger
     needs: haslabel
     if: needs.haslabel.outputs.benchmark
     uses: ./.github/workflows/benchmark-runner.yml
